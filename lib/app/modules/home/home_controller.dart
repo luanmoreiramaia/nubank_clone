@@ -6,10 +6,12 @@ class HomeController = _HomeControllerBase with _$HomeController;
 
 abstract class _HomeControllerBase with Store {
   @observable
-  int value = 0;
-
+  bool showMenu;
   @action
-  void increment() {
-    value++;
-  }
+  changeShowMenu() => showMenu = !showMenu;
+
+  @observable
+  int currentIndex;
+  @action
+  changeCurrentIndex(int value) => currentIndex = value;
 }
