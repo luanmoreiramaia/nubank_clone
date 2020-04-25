@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:build_context/build_context.dart';
+import 'package:flutter/material.dart';
 import 'package:nubank_clone/app/modules/home/widgets/item_menu.dart';
 
 class MenuApp extends StatelessWidget {
@@ -20,6 +20,7 @@ class MenuApp extends StatelessWidget {
         child: Container(
           height: context.mediaQuerySize.height * 0.65,
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: <Widget>[
                 Image.network(
