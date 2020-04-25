@@ -1,3 +1,4 @@
+import "package:build_context/build_context.dart";
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -8,17 +9,15 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _deviceData = MediaQuery.of(context);
-
     return Column(
       children: <Widget>[
         SizedBox(
-          height: _deviceData.padding.top,
+          height: context.mediaQueryPadding.top,
         ),
         GestureDetector(
           onTap: onTap,
           child: Container(
-            height: _deviceData.size.height * 0.14,
+            height: context.mediaQuerySize.height * 0.14,
             color: Colors.purple[800],
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

@@ -1,9 +1,12 @@
+import "package:build_context/build_context.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:nubank_clone/app/modules/home/widgets/custom_app_bar.dart';
 import 'package:nubank_clone/app/modules/home/widgets/dots_app.dart';
+import 'package:nubank_clone/app/modules/home/widgets/menu_app.dart';
 import 'package:nubank_clone/app/modules/home/widgets/page_view_app.dart';
+
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,8 +20,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   Widget build(BuildContext context) {
-    final _screenHeigth = MediaQuery.of(context).size.height;
-    final _paddingTop = MediaQuery.of(context).padding.top;
+    final _screenHeigth = context.mediaQuerySize.height;
+    final _paddingTop = context.mediaQueryPadding.top;
 
     if (controller.yPosition == null) {
       controller.yPosition = (_screenHeigth * 0.14) + _paddingTop;
@@ -38,6 +41,10 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                   controller.yPosition =
                       controller.showMenu ? (_screenHeigth * 0.80) + _paddingTop : (_screenHeigth * 0.14) + _paddingTop;
                 },
+              ),
+              MenuApp(
+                top: (_screenHeigth * 0.14) + _paddingTop,
+                showMenu: controller.showMenu,
               ),
               PageViewApp(
                 top: controller.yPosition,
@@ -75,7 +82,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 },
               ),
               DotsApp(
-                top: !controller.showMenu ? (_screenHeigth * 0.74) + _paddingTop : (_screenHeigth * 1.0),
+                showMenu: controller.showMenu,
+                top: (_screenHeigth * 0.74) + _paddingTop,
                 currentIndex: controller.currentIndex,
               ),
             ],
