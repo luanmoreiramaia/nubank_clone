@@ -1,6 +1,6 @@
 import 'package:build_context/build_context.dart';
 import 'package:flutter/material.dart';
-import 'package:nubank_clone/app/modules/home/widgets/item_menu.dart';
+import 'package:nubank_clone/app/modules/home/widgets/menu/item_menu.dart';
 
 class MenuApp extends StatelessWidget {
   final double top;
@@ -89,7 +89,7 @@ class MenuApp extends StatelessWidget {
                       ),
                       Container(
                         height: 40,
-                        width: double.infinity,                  
+                        width: double.infinity,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 0.7,
@@ -110,7 +110,7 @@ class MenuApp extends StatelessWidget {
                             'SAIR DO APLICATIVO',
                             style: TextStyle(
                               fontSize: 12,
-                              fontWeight: FontWeight.bold
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),

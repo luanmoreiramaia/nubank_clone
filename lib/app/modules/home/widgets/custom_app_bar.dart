@@ -25,10 +25,13 @@ class CustomAppBar extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.network(
-                      'https://logodownload.org/wp-content/uploads/2019/08/nubank-logo-3.png',
-                      height: 35,
-                      color: Colors.white,
+                    Hero(
+                      tag: 'logo',
+                      child: Image.asset(
+                        'assets/images/logo.png',
+                        height: 35,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(
                       width: 10,

@@ -2,11 +2,11 @@ import "package:build_context/build_context.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:nubank_clone/app/modules/home/widgets/bottom_menu.dart';
+import 'package:nubank_clone/app/modules/home/widgets/bottom_menu/bottom_menu_widget.dart';
 import 'package:nubank_clone/app/modules/home/widgets/custom_app_bar.dart';
-import 'package:nubank_clone/app/modules/home/widgets/dots_app.dart';
-import 'package:nubank_clone/app/modules/home/widgets/menu_app.dart';
-import 'package:nubank_clone/app/modules/home/widgets/page_view_app.dart';
+import 'package:nubank_clone/app/modules/home/widgets/menu/menu_app.dart';
+import 'package:nubank_clone/app/modules/home/widgets/page_view_app/dots_app.dart';
+import 'package:nubank_clone/app/modules/home/widgets/page_view_app/page_view_app_widget.dart';
 
 import 'home_controller.dart';
 
@@ -47,7 +47,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 top: (_screenHeigth * 0.14) + _paddingTop,
                 showMenu: controller.showMenu,
               ),
-              BottomMenu(
+              BottomMenuWidget(
                 showMenu: controller.showMenu,
               ),
               DotsApp(
@@ -55,7 +55,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 top: (_screenHeigth * 0.74) + _paddingTop,
                 currentIndex: controller.currentIndex,
               ),
-              PageViewApp(
+              PageViewAppWidget(
                 top: controller.yPosition,
                 onChanged: controller.changeCurrentIndex,
                 showMenu: controller.showMenu,

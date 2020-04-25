@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nubank_clone/app/modules/home/widgets/third_card/third_card_controller.dart';
+import 'package:nubank_clone/app/modules/home/widgets/cards/third_card/third_card_controller.dart';
 
 class ThirdCardWidget extends StatefulWidget {
   @override
