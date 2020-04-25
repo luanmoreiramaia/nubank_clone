@@ -2,11 +2,12 @@ import "package:build_context/build_context.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:nubank_clone/app/modules/home/widgets/cards/card_app.dart';
-import 'package:nubank_clone/app/modules/home/widgets/cards/first_card.dart';
-import 'package:nubank_clone/app/modules/home/widgets/cards/second_card/second_card_widget.dart';
-import 'package:nubank_clone/app/modules/home/widgets/cards/third_card/third_card_widget.dart';
-import 'package:nubank_clone/app/modules/home/widgets/page_view_app/page_view_app_controller.dart';
+
+import '../cards/card_app.dart';
+import '../cards/first_card.dart';
+import '../cards/second_card/second_card_widget.dart';
+import '../cards/third_card/third_card_widget.dart';
+import 'page_view_app_controller.dart';
 
 class PageViewAppWidget extends StatefulWidget {
   final double top;

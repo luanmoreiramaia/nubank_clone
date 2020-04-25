@@ -1,6 +1,7 @@
 import 'package:build_context/build_context.dart';
 import 'package:flutter/material.dart';
-import 'package:nubank_clone/app/modules/home/widgets/menu/item_menu.dart';
+
+import 'item_menu.dart';
 
 class MenuApp extends StatelessWidget {
   final double top;

@@ -31,11 +31,11 @@ mixin _$ThirdCardController on _ThirdCardControllerBase, Store {
       ActionController(name: '_ThirdCardControllerBase');
 
   @override
-  dynamic setButtonPressed(bool value) {
+  dynamic setButtonPressed({bool valueButtonPressed}) {
     final _$actionInfo =
         _$_ThirdCardControllerBaseActionController.startAction();
     try {
-      return super.setButtonPressed(value);
+      return super.setButtonPressed(valueButtonPressed: valueButtonPressed);
     } finally {
       _$_ThirdCardControllerBaseActionController.endAction(_$actionInfo);
     }
