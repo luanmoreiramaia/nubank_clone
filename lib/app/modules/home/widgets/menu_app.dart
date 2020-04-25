@@ -88,7 +88,7 @@ class MenuApp extends StatelessWidget {
                         height: 25,
                       ),
                       Container(
-                        height: 35,
+                        height: 40,
                         width: double.infinity,                  
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -110,6 +110,7 @@ class MenuApp extends StatelessWidget {
                             'SAIR DO APLICATIVO',
                             style: TextStyle(
                               fontSize: 12,
+                              fontWeight: FontWeight.bold
                             ),
                           ),
                         ),
