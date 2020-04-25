@@ -93,52 +93,55 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 left: 0,
                 right: 0,
                 height: (_screenHeigth * 0.22) - _paddingTop - _paddingTop,
-                child: AnimatedOpacity(
-                  opacity: !controller.showMenu ? 1 : 0,
-                  duration: Duration(milliseconds: 200),                  
-                                  child: ListView(
-                    physics: BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      ItemMenuBottom(
-                        firstItem: true,
-                        iconData: Icons.person_add,
-                        text: 'Indicar amigos',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.phone_android,
-                        text: 'Recarga de celular',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.chat,
-                        text: 'Cobrar',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.monetization_on,
-                        text: 'Empréstimos',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.move_to_inbox,
-                        text: 'Depositar',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.mobile_screen_share,
-                        text: 'Transferir',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.format_align_center,
-                        text: 'Ajustar limite',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.chrome_reader_mode,
-                        text: 'Pagar',
-                      ),
-                      ItemMenuBottom(
-                        iconData: Icons.lock_open,
-                        text: 'Bloquear cartão',
-                        lastItem: true,
-                      ),
-                    ],
+                child: IgnorePointer(
+                  ignoring: controller.showMenu,
+                  child: AnimatedOpacity(
+                    opacity: !controller.showMenu ? 1 : 0,
+                    duration: Duration(milliseconds: 200),
+                    child: ListView(
+                      physics: BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        ItemMenuBottom(
+                          firstItem: true,
+                          iconData: Icons.person_add,
+                          text: 'Indicar amigos',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.phone_android,
+                          text: 'Recarga de celular',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.chat,
+                          text: 'Cobrar',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.monetization_on,
+                          text: 'Empréstimos',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.move_to_inbox,
+                          text: 'Depositar',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.mobile_screen_share,
+                          text: 'Transferir',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.format_align_center,
+                          text: 'Ajustar limite',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.chrome_reader_mode,
+                          text: 'Pagar',
+                        ),
+                        ItemMenuBottom(
+                          iconData: Icons.lock_open,
+                          text: 'Bloquear cartão',
+                          lastItem: true,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
