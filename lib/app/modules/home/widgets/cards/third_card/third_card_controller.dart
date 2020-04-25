@@ -7,5 +7,5 @@ abstract class _ThirdCardControllerBase with Store {
   @observable
   bool buttonPressed = false;
   @action
-  setButtonPressed(bool value) => buttonPressed = value;
+  setButtonPressed({bool valueButtonPressed}) => buttonPressed = valueButtonPressed;
 }
