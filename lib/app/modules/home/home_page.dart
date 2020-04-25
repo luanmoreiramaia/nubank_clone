@@ -4,6 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:nubank_clone/app/modules/home/widgets/custom_app_bar.dart';
 import 'package:nubank_clone/app/modules/home/widgets/dots_app.dart';
+import 'package:nubank_clone/app/modules/home/widgets/item_menu_bottom.dart';
 import 'package:nubank_clone/app/modules/home/widgets/menu_app.dart';
 import 'package:nubank_clone/app/modules/home/widgets/page_view_app.dart';
 
@@ -85,6 +86,61 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 showMenu: controller.showMenu,
                 top: (_screenHeigth * 0.74) + _paddingTop,
                 currentIndex: controller.currentIndex,
+              ),
+              AnimatedPositioned(
+                duration: Duration(milliseconds: 200),
+                bottom: !controller.showMenu ? _paddingTop : 0,
+                left: 0,
+                right: 0,
+                height: (_screenHeigth * 0.22) - _paddingTop - _paddingTop,
+                child: AnimatedOpacity(
+                  opacity: !controller.showMenu ? 1 : 0,
+                  duration: Duration(milliseconds: 200),                  
+                                  child: ListView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      ItemMenuBottom(
+                        firstItem: true,
+                        iconData: Icons.person_add,
+                        text: 'Indicar amigos',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.phone_android,
+                        text: 'Recarga de celular',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.chat,
+                        text: 'Cobrar',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.monetization_on,
+                        text: 'Empréstimos',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.move_to_inbox,
+                        text: 'Depositar',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.mobile_screen_share,
+                        text: 'Transferir',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.format_align_center,
+                        text: 'Ajustar limite',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.chrome_reader_mode,
+                        text: 'Pagar',
+                      ),
+                      ItemMenuBottom(
+                        iconData: Icons.lock_open,
+                        text: 'Bloquear cartão',
+                        lastItem: true,
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           );
