@@ -6,10 +6,17 @@ class HomeController = _HomeControllerBase with _$HomeController;
 
 abstract class _HomeControllerBase with Store {
   @observable
-  int value = 0;
-
+  bool showMenu = false;
   @action
-  void increment() {
-    value++;
-  }
+  changeShowMenu({bool value}) => showMenu = value == null ? !showMenu : value;
+
+  @observable
+  int currentIndex = 0;
+  @action
+  changeCurrentIndex(int value) => currentIndex = value;
+
+  @observable
+  double yPosition;
+  @action
+  changeYPosition(double value) => yPosition = value;
 }
