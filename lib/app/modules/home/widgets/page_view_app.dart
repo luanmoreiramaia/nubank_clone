@@ -1,3 +1,4 @@
+import "package:build_context/build_context.dart";
 import 'package:flutter/material.dart';
 
 import 'card_app.dart';
@@ -12,12 +13,10 @@ class PageViewApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _deviceData = MediaQuery.of(context);
-
     return AnimatedPositioned(
       top: top,
-      height: _deviceData.size.height * 0.60,
-      width: _deviceData.size.width,
+      height: context.mediaQuerySize.height * 0.60,
+      width: context.mediaQuerySize.width,
       duration: Duration(milliseconds: 300),
       curve: Curves.easeOut,
       child: GestureDetector(
