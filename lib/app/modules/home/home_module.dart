@@ -4,7 +4,7 @@ import 'package:nubank_clone/app/modules/home/home_page.dart';
 
 class HomeModule extends ChildModule {
   @override
-  List<Bind> get binds => [
+  List<Bind> get binds => [        
         Bind<HomeController>((i) => HomeController()),
       ];
 
