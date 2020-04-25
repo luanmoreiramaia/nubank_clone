@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:build_context/build_context.dart';
 
 class FirstCard extends StatelessWidget {
   @override
@@ -14,6 +15,7 @@ class FirstCard extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Padding(
@@ -81,12 +83,15 @@ class FirstCard extends StatelessWidget {
                                   ),
                                 ]),
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.black,
                                   fontSize: 12,
                                 ),
                               ),
                             ],
                           ),
+                        ),
+                        SizedBox(
+                          height: context.mediaQuerySize.height * 0.05,
                         ),
                       ],
                     ),
@@ -142,13 +147,13 @@ class FirstCard extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     SizedBox(
-                      width: 5,
+                      width: 10,
                     ),
                     Flexible(
                       child: Text(
                         'Compra mais recente em Supermercado no valor de R\$ 30,00 sexta',
                         style: TextStyle(
-                          color: Colors.grey,
+                          color: Colors.black,
                           fontSize: 13,
                         ),
                       ),

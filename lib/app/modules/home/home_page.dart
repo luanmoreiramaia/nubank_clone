@@ -50,6 +50,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               BottomMenu(
                 showMenu: controller.showMenu,
               ),
+              DotsApp(
+                showMenu: controller.showMenu,
+                top: (_screenHeigth * 0.74) + _paddingTop,
+                currentIndex: controller.currentIndex,
+              ),
               PageViewApp(
                 top: controller.yPosition,
                 onChanged: controller.changeCurrentIndex,
@@ -84,11 +89,6 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     controller.changeShowMenu(value: false);
                   }
                 },
-              ),
-              DotsApp(
-                showMenu: controller.showMenu,
-                top: (_screenHeigth * 0.74) + _paddingTop,
-                currentIndex: controller.currentIndex,
               ),
             ],
           );
