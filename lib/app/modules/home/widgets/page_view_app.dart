@@ -17,7 +17,7 @@ class PageViewApp extends StatelessWidget {
       top: top,
       height: context.mediaQuerySize.height * 0.60,
       width: context.mediaQuerySize.width,
-      duration: Duration(milliseconds: 300),
+      duration: Duration(milliseconds: 150),
       curve: Curves.easeOut,
       child: GestureDetector(
         onPanUpdate: onPanUpdate,
