@@ -1,5 +1,6 @@
 import "package:build_context/build_context.dart";
 import 'package:flutter/material.dart';
+import 'package:nubank_clone/app/modules/home/widgets/first_card.dart';
 
 import 'card_app.dart';
 
@@ -17,7 +18,7 @@ class PageViewApp extends StatelessWidget {
       top: top,
       height: context.mediaQuerySize.height * 0.60,
       width: context.mediaQuerySize.width,
-      duration: Duration(milliseconds: 150),
+      duration: Duration(milliseconds: 250),
       curve: Curves.easeOut,
       child: GestureDetector(
         onPanUpdate: onPanUpdate,
@@ -25,7 +26,9 @@ class PageViewApp extends StatelessWidget {
           onPageChanged: onChanged,
           physics: showMenu ? NeverScrollableScrollPhysics() : BouncingScrollPhysics(),
           children: <Widget>[
-            CardApp(),
+            CardApp(
+              child: FirstCard(),
+            ),
             CardApp(),
             CardApp(),
           ],
