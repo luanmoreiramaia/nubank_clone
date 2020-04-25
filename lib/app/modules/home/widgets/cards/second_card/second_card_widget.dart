@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:build_context/build_context.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nubank_clone/app/modules/home/widgets/cards/second_card/second_card_controller.dart';
+
+import 'second_card_controller.dart';
 
 class SecondCardWidget extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class SecondCardWidget extends StatefulWidget {
 
 class _SecondCardWidgetState extends ModularState<SecondCardWidget, SecondCardController>
     with AutomaticKeepAliveClientMixin {
+    
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -58,7 +60,7 @@ class _SecondCardWidgetState extends ModularState<SecondCardWidget, SecondCardCo
                               color: Colors.grey,
                             ),
                             onTap: () {
-                              controller.changeShowSaldo();
+                              controller.changeShowSaldo(value: !controller.showSaldo);
                             },
                           ),
                         ],

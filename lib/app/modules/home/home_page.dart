@@ -2,13 +2,13 @@ import "package:build_context/build_context.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:nubank_clone/app/modules/home/widgets/bottom_menu/bottom_menu_widget.dart';
-import 'package:nubank_clone/app/modules/home/widgets/custom_app_bar.dart';
-import 'package:nubank_clone/app/modules/home/widgets/menu/menu_app.dart';
-import 'package:nubank_clone/app/modules/home/widgets/page_view_app/dots_app.dart';
-import 'package:nubank_clone/app/modules/home/widgets/page_view_app/page_view_app_widget.dart';
 
 import 'home_controller.dart';
+import 'widgets/bottom_menu/bottom_menu_widget.dart';
+import 'widgets/custom_app_bar.dart';
+import 'widgets/menu/menu_app.dart';
+import 'widgets/page_view_app/dots_app.dart';
+import 'widgets/page_view_app/page_view_app_widget.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
