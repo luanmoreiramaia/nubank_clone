@@ -43,14 +43,31 @@ mixin _$HomeController on _HomeControllerBase, Store {
     }, _$currentIndexAtom, name: '${_$currentIndexAtom.name}_set');
   }
 
+  final _$yPositionAtom = Atom(name: '_HomeControllerBase.yPosition');
+
+  @override
+  double get yPosition {
+    _$yPositionAtom.context.enforceReadPolicy(_$yPositionAtom);
+    _$yPositionAtom.reportObserved();
+    return super.yPosition;
+  }
+
+  @override
+  set yPosition(double value) {
+    _$yPositionAtom.context.conditionallyRunInAction(() {
+      super.yPosition = value;
+      _$yPositionAtom.reportChanged();
+    }, _$yPositionAtom, name: '${_$yPositionAtom.name}_set');
+  }
+
   final _$_HomeControllerBaseActionController =
       ActionController(name: '_HomeControllerBase');
 
   @override
-  dynamic changeShowMenu() {
+  dynamic changeShowMenu({bool value}) {
     final _$actionInfo = _$_HomeControllerBaseActionController.startAction();
     try {
-      return super.changeShowMenu();
+      return super.changeShowMenu(value: value);
     } finally {
       _$_HomeControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -67,9 +84,19 @@ mixin _$HomeController on _HomeControllerBase, Store {
   }
 
   @override
+  dynamic changeYPosition(double value) {
+    final _$actionInfo = _$_HomeControllerBaseActionController.startAction();
+    try {
+      return super.changeYPosition(value);
+    } finally {
+      _$_HomeControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     final string =
-        'showMenu: ${showMenu.toString()},currentIndex: ${currentIndex.toString()}';
+        'showMenu: ${showMenu.toString()},currentIndex: ${currentIndex.toString()},yPosition: ${yPosition.toString()}';
     return '{$string}';
   }
 }
